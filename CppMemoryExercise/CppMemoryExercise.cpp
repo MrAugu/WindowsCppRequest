@@ -105,11 +105,15 @@ int main()
 	WinHttpCloseHandle(hSession);
 
 	// Processing the jason
-	JsonParser parser(&response);
+	JsonParser parser(response);
 	
 	if (parser.parse() < 0) {
-		cout << "Parsed.";
+		cout << "Json parser error.";
+		return 1;
 	}
+
+	std::string memberId = parser.getValue("requestedId");
+	cout << memberId << endl;
 
 	return 0;
 }
