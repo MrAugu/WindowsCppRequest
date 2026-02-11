@@ -14,5 +14,6 @@ project ("CppMemoryExercise")
 add_library(winlibs INTERFACE)
 target_link_libraries(winlibs INTERFACE winhttp)
 
+
 # Include sub-projects.
 add_subdirectory ("CppMemoryExercise")

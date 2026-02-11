@@ -98,11 +98,18 @@ int main()
 		response.append(buffer.data(), dwDownloaded);
 	} while (dwSize > 0);
 
-	cout << response;
+	// Closing all instances
 
 	WinHttpCloseHandle(hRequest);
 	WinHttpCloseHandle(hConnection);
 	WinHttpCloseHandle(hSession);
+
+	// Processing the jason
+	JsonParser parser(&response);
+	
+	if (parser.parse() < 0) {
+		cout << "Parsed.";
+	}
 
 	return 0;
 }

@@ -3,7 +3,9 @@
 #
 
 # Add source to this project's executable.
-add_executable (CppMemoryExercise "CppMemoryExercise.cpp" "CppMemoryExercise.h")
+add_executable (CppMemoryExercise "CppMemoryExercise.cpp" "CppMemoryExercise.h" "JsonParser.h" "JsonParser.cpp")
+
+target_include_directories(CppMemoryExercise PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})
 
 target_link_libraries(CppMemoryExercise PRIVATE winlibs)
 
